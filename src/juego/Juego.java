@@ -9,6 +9,9 @@ import entorno.InterfaceJuego;
 public class Juego extends InterfaceJuego
 {
 	// El objeto Entorno que controla el tiempo y otros
+	private int y = 300;
+	private int x1 = 300;
+	private int x2 = 475;
 	private Entorno entorno;
 	
 	// Variables y métodos propios de cada grupo
@@ -37,11 +40,25 @@ public class Juego extends InterfaceJuego
 	{
 		// Procesamiento de un instante de tiempo
 		// ...
-		
-		entorno.dibujarCirculo(200, 300, 25, Color.pink);
-		entorno.dibujarRectangulo(300, 500, 100, 300, 0, Color.green);
-		entorno.dibujarRectangulo(475, 100, 100, 300, 0, Color.green);
+		if (entorno.estaPresionada(entorno.TECLA_ARRIBA)) {
+			y-=1;
+		}
+		else {
+			y+=1;
+		}
+		x1--;
+		x2--;
+		entorno.dibujarCirculo(200, y, 25, Color.pink);
+		entorno.dibujarRectangulo(x1, 500, 100, 300, 0, Color.green);
+		entorno.dibujarRectangulo(x2, 100, 100, 300, 0, Color.green);
 		entorno.escribirTexto("Puntaje:_00", 0, 10);
+		if (x1==0) {
+			x1=800;
+		}
+		if (x2==0) {
+			x2=800;
+		}
+		
 		
 	}
 	
