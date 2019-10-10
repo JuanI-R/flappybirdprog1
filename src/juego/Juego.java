@@ -1,6 +1,8 @@
 package juego;
 
 
+import java.awt.Color;
+
 import entorno.Entorno;
 import entorno.InterfaceJuego;
 
@@ -19,9 +21,10 @@ public class Juego extends InterfaceJuego
 		
 		// Inicializar lo que haga falta para el juego
 		// ...
-
+		
 		// Inicia el juego!
 		this.entorno.iniciar();
+
 	}
 
 	/**
@@ -35,7 +38,11 @@ public class Juego extends InterfaceJuego
 		// Procesamiento de un instante de tiempo
 		// ...
 		
-
+		entorno.dibujarCirculo(200, 300, 25, Color.pink);
+		entorno.dibujarRectangulo(300, 500, 100, 300, 0, Color.green);
+		entorno.dibujarRectangulo(475, 100, 100, 300, 0, Color.green);
+		entorno.escribirTexto("Puntaje:_00", 0, 10);
+		
 	}
 	
 
